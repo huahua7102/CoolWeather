@@ -14,6 +14,7 @@
 UI的编写；网络技术（okhttp）；数据存储（litepal）；数据解析（JSON格式的数据解析：JSONObject，GSON），碎片等；
 
  ## 展示：
+![image](https://github.com/huahua7102/CoolWeather/blob/master/image/%E5%9B%BE%E7%89%871.png)
 ![image](https://github.com/huahua7102/CoolWeather/blob/master/image/%E5%9B%BE%E7%89%872.png)
 ![image](https://github.com/huahua7102/CoolWeather/blob/master/image/%E5%9B%BE%E7%89%873.png)
 ![image](https://github.com/huahua7102/CoolWeather/blob/master/image/%E5%9B%BE%E7%89%874.png)
