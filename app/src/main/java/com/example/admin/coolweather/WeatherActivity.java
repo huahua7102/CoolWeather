@@ -40,7 +40,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView degreeText;
     private TextView weatherInfoText;
     private LinearLayout forecastLayout;
-    private TextView apiText;
+    private TextView aqiText;
     private TextView pm25Text;
     private TextView comfortText;
     private TextView carWashText;
@@ -70,7 +70,7 @@ public class WeatherActivity extends AppCompatActivity {
         degreeText =(TextView)findViewById(R.id.degree_text);
         weatherInfoText = (TextView)findViewById(R.id.weather_info_text);
         forecastLayout =(LinearLayout)findViewById(R.id.forecast_layout);
-        apiText = (TextView)findViewById(R.id.aqi_text);
+        aqiText = (TextView)findViewById(R.id.aqi_text);
         pm25Text = (TextView)findViewById(R.id.pm25_text);
         comfortText = (TextView)findViewById(R.id.comfort_text);
         carWashText = (TextView)findViewById(R.id.car_wash_text);
@@ -124,7 +124,7 @@ public class WeatherActivity extends AppCompatActivity {
      * 根据天气id请求城市天气信息
      */
     public void requestWeather(final  String weatherId){
-        String weatherUrl = "http://guolin.tech/api/weather?cityid="+weatherId+"$key=facb79de065b47778ff3f5128076ce9a ";
+        String weatherUrl = "http://guolin.tech/api/weather?cityid="+weatherId+"&key=facb79de065b47778ff3f5128076ce9a";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -193,12 +193,12 @@ public class WeatherActivity extends AppCompatActivity {
 
         }
         if(weather.aqi != null){
-            apiText.setText(weather.aqi.city.api);
+            aqiText.setText(weather.aqi.city.aqi);
             pm25Text.setText(weather.aqi.city.pm25);
         }
-        String comfort = "舒适度" + weather.suggestion.comfort.info;
-        String carWash = "洗车指数" + weather.suggestion.carWash.info;
-        String sport = "运动建议" + weather.suggestion.sport.info;
+        String comfort = "舒适度:" + weather.suggestion.comfort.info;
+        String carWash = "洗车指数:" + weather.suggestion.carWash.info;
+        String sport = "运动建议:" + weather.suggestion.sport.info;
         comfortText.setText(comfort);
         carWashText.setText(carWash);
         sportText.setText(sport);
